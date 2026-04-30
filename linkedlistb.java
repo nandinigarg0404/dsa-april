@@ -14,18 +14,24 @@ class link{
             head=newnode;
             return;
         }
-        Node temp=null;
-        while(temp.next!=head){
+        Node temp=head;
+        while(temp.next!=null){
             temp=temp.next;
         }
         temp.next=newnode;
     }
+    void insertb(int data){
+        Node newnode=new Node(data);
+        newnode.next=head;
+        head=newnode;
+    }
     void display(){
-        Node temp=null;
-        while(temp!=head){
+        Node temp=head;
+        while(temp!=null){
             System.out.print(temp.data+"-->");
             temp=temp.next;
         }
+        System.out.println("");
     }
 }
 public class linkedlistb {
@@ -33,6 +39,8 @@ public class linkedlistb {
         link ls=new link();
         ls.insert(10);
         ls.insert(20);
+        ls.insertb(30);
         ls.display();
+        System.out.println();
     }
 }
